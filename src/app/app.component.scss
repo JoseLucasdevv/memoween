@@ -1,0 +1,62 @@
+.game-container {
+  height: 500px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+}
+
+.game-container h1{
+  font-size: 96px;
+  text-shadow:
+    1px 1px 2px rgb(7, 7, 7),
+    0 0 1em #8958FF,
+    0 0 0.2em #8958FF;
+
+  color: white;
+}
+
+.game-container .game-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: ce;
+  flex-wrap: wrap;
+  width: 541px;
+  gap: 12px;
+  font-size: 30px;
+
+}
+.test{
+  height: 500px;
+}
+
+.game-container .button {
+  display: flex;
+  button{
+    background-color: #8958FF;
+    border-radius: 12px;
+    border: none;
+    font-family: "Jolly Lodger", system-ui;
+    font-size: 24px;
+    cursor: pointer;
+    color: White;
+    padding: 12px;
+    width: 100px;
+  }
+}
+
+
+
+.congratulations {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
