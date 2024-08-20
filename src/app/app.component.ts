@@ -5,10 +5,12 @@ import { ImageType } from './types/img-type';
 import { BehaviorSubject } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CardComponent, AsyncPipe],
+
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -41,18 +43,17 @@ export class AppComponent {
   clickButton(e: Event): void {
     this.isDisabled = true;
     this.shuffleData();
-    this.cardComponents.forEach(child => child.flipCardWhenStartForSeconds())
+    this.cardComponents.forEach((child) => child.flipCardWhenStartForSeconds());
     setTimeout(() => {
       this.controlGame = true;
     }, 2000); // Start the game after the initial flip
   }
   again() {
-    console.log('here !')
-    this.cardComponents.forEach(child => child.flipCardWhenFinish())
+    console.log('here !');
+    this.cardComponents.forEach((child) => child.flipCardWhenFinish());
     this.controlGame = false;
     this.isDisabled = false;
     this.gameCompleted = false;
-
   }
 
   selectCard(e: Event): void {
@@ -89,12 +90,11 @@ export class AppComponent {
 
   checkMatch(): boolean {
     if (this.firstElement === this.secondElement) {
-          this.matchedPairs++;
+      this.matchedPairs++;
       if (this.matchedPairs === this.totalPairs) {
-        setTimeout(()=>{
+        setTimeout(() => {
           this.gameCompleted = true;
-        },1000)
-
+        }, 1000);
       }
       return true;
     }

@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900');
 @import './variables.scss';
 
 *{
@@ -9,8 +10,6 @@
 }
 
 body{
-
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,10 +18,20 @@ body{
   background-color: $color-bg;
 }
 html{
+  width: 100%;
   font-family: "Jolly Lodger", system-ui;
   font-weight: 400;
   font-style: normal;
 }
+
+
+@media (min-width: 541px) {
+  .game-wrapper{
+    width: 541px;
+  }
+
+}
+
 
 
 

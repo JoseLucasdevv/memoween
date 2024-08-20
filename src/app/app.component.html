@@ -12,20 +12,22 @@
   </div>
 
   <div class="button">
-    <button [disabled]="isDisabled" #button (click)="clickButton($event)">Start</button>
+    <button [disabled]="isDisabled" #button (click)="clickButton($event)">START</button>
   </div>
 </section>
 
 @if (this.gameCompleted) {
   <div class="congratulations">
+
+    <h1>Buuh!</h1>
     <h2>Congratulations! You've matched all the cards!</h2>
 
     <h3>if you do want play again just click on button below.</h3>
-    <button (click)="again()">play Again</button>
+    <button (click)="again()">Play Again</button>
   </div>
 }
 
 
-<div class="vector"></div>
+
 
 

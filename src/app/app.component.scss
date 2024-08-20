@@ -1,16 +1,17 @@
 @import '../variables.scss';
 
 .game-container {
-  height: 500px;
-  width: 800px;
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 40px;
 
 }
 
 .game-container h1{
+
   font-size: 96px;
   text-shadow:
     1px 1px 2px rgb(7, 7, 7),
@@ -23,9 +24,9 @@
 .game-container .game-wrapper{
   display: flex;
   align-items: center;
-  justify-content: ce;
+  justify-content: center;
   flex-wrap: wrap;
-  width: 541px;
+
   gap: 12px;
   font-size: 30px;
 
@@ -36,16 +37,20 @@
 
 .game-container .button {
   display: flex;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   button{
     background-color: #8958FF;
-    border-radius: 12px;
+    border-radius: 7px;
     border: none;
     font-family: "Jolly Lodger", system-ui;
-    font-size: 24px;
+    font-size: 29px;
     cursor: pointer;
     color: White;
-    padding: 12px;
-    width: 100px;
+    padding: 4px;
+    width: 30%;
   }
 }
 
@@ -56,28 +61,56 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: $color-card-front;
-  padding: 20px;
-  border-radius: 10px;
+  background: $color-bg;
+  padding: 40px;
+  border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  animation:fadeIn 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
-  h2{
-    color: black
+  img{
+
+    width: 84px;
+    display: flex;
   }
-  h3{
-    font-size: large;
+  h1{
+    font-size: 50px;
+  text-shadow:
+    1px 1px 2px rgb(7, 7, 7),
+    0 0 1em $color-card-back,
+    0 0 0.2em $color-card-back;
 
+  color: white;
+  }
+  h2{
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
   }
   button{
     background-color: $color-card-back;
-    border-radius: 12px;
+    border-radius: 4px;
     border: none;
-    font-family: "Jolly Lodger", system-ui;
-    font-size: 24px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
     cursor: pointer;
     color: White;
-    padding: 7px;
-    width: 100px;
+    padding: 6px;
+    width: 60%;
   }
 }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+
+}
+
+
+@media(max-width:390px){
+.game-container h1{
+font-size: 80px;
+}
+}
+
+
+
