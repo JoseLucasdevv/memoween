@@ -41,18 +41,18 @@ export class AppComponent {
   clickButton(e: Event): void {
     this.isDisabled = true;
     this.shuffleData();
-    this.cardComponents.forEach((child) => {
-      child.flipCardWhenStartForSeconds();
-    });
+    this.cardComponents.forEach(child => child.flipCardWhenStartForSeconds())
     setTimeout(() => {
       this.controlGame = true;
     }, 2000); // Start the game after the initial flip
   }
   again() {
     console.log('here !')
+    this.cardComponents.forEach(child => child.flipCardWhenFinish())
     this.controlGame = false;
     this.isDisabled = false;
     this.gameCompleted = false;
+
   }
 
   selectCard(e: Event): void {
@@ -66,7 +66,7 @@ export class AppComponent {
     this.countClick++;
     element.parentElement?.classList.add('control-flip');
 
-    const titleElement = Number(element.getAttribute('title'));
+    const titleElement = Number(element.getAttribute('id'));
 
     if (this.countClick === 1) {
       this.firstElementHTML = element.parentElement;
@@ -89,9 +89,12 @@ export class AppComponent {
 
   checkMatch(): boolean {
     if (this.firstElement === this.secondElement) {
-      this.matchedPairs++;
+          this.matchedPairs++;
       if (this.matchedPairs === this.totalPairs) {
-        this.gameCompleted = true;
+        setTimeout(()=>{
+          this.gameCompleted = true;
+        },1000)
+
       }
       return true;
     }
