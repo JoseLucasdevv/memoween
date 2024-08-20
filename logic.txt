@@ -1,0 +1,9 @@
+REMEMBER - it's shouldn't be allowed more than 2 clicks.
+
+1 - each card should has an id,
+2 - after this, i need to storage that information on a variable.
+3 - this card need to be fliped until i check a match from that ID,
+4 - i need to check if that match can consider it's true.
+5 - if it's  true i need to keep that card Fliped.
+6 - if it's not true i need to switch back to default position.
+
