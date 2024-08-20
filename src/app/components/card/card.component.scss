@@ -1,0 +1,58 @@
+@import '../../../variables.scss';
+
+.card{
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  background-color: transparent;
+  transform-style: preserve-3d;
+  perspective: 100px;
+}
+
+.card .flip-card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg)
+}
+
+.card .control-flip{
+  transform: rotateY(var(--rotation-deg))
+}
+
+
+
+.flip-card-front, .flip-card-back {
+  border-radius: 12px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:$color-card-front;
+  img{
+    width: 50px;
+    height: 50px;
+  }
+
+
+
+}
+
+.flip-card-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:$color-card-back;
+  color: white;
+  transform: rotateY(180deg);
+}
