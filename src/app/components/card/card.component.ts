@@ -39,4 +39,8 @@ await new Promise<void>((resolve) => {
 
     }
 
+    flipCardWhenFinish(){
+      this.cardFlipElement.classList.remove('control-flip');
+    }
+
 }
