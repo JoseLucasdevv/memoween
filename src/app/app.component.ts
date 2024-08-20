@@ -48,6 +48,12 @@ export class AppComponent {
       this.controlGame = true;
     }, 2000); // Start the game after the initial flip
   }
+  again() {
+    console.log('here !')
+    this.controlGame = false;
+    this.isDisabled = false;
+    this.gameCompleted = false;
+  }
 
   selectCard(e: Event): void {
     if (this.countClick >= 2 || !this.controlGame) return;
@@ -70,10 +76,8 @@ export class AppComponent {
       this.secondElement = titleElement;
 
       if (this.checkMatch()) {
-
         this.resetSelections();
       } else {
-
         setTimeout(() => {
           this.firstElementHTML?.classList.remove('control-flip');
           this.secondElementHTML?.classList.remove('control-flip');
