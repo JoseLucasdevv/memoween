@@ -13,6 +13,7 @@ import { AsyncPipe } from '@angular/common';
 
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+
 })
 export class AppComponent {
   @ViewChildren('innerCard') cardComponents!: QueryList<CardComponent>;
@@ -44,16 +45,30 @@ export class AppComponent {
     this.isDisabled = true;
     this.shuffleData();
     this.cardComponents.forEach((child) => child.flipCardWhenStartForSeconds());
+
     setTimeout(() => {
       this.controlGame = true;
     }, 2000); // Start the game after the initial flip
   }
   again() {
-    console.log('here !');
+
     this.cardComponents.forEach((child) => child.flipCardWhenFinish());
     this.controlGame = false;
     this.isDisabled = false;
     this.gameCompleted = false;
+  }
+
+  restart(e:Event){
+
+
+    this.cardComponents.forEach((child) => child.flipCardWhenFinish());
+    this.controlGame = false;
+    this.gameCompleted = false;
+
+  setTimeout(()=>{
+     this.clickButton(e);
+  },1000);
+
   }
 
   selectCard(e: Event): void {

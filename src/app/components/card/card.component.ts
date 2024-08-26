@@ -30,6 +30,7 @@ export class CardComponent {
 async flipCardWhenStartForSeconds(){
 
 await new Promise<void>((resolve) => {
+
   this.cardFlipElement.classList.add('control-flip');
     setTimeout(() => {
       resolve();
