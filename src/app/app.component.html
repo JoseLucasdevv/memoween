@@ -10,10 +10,19 @@
 
 
   </div>
-
-  <div class="button">
+@if(!this.isDisabled){
+<div class="button">
     <button [disabled]="isDisabled" #button (click)="clickButton($event)">START</button>
   </div>
+
+}
+
+  @if(this.isDisabled){
+  <div class="button">
+    <button #button (click)="restart($event)">RESTART</button>
+  </div>
+  }
+
 </section>
 
 @if (this.gameCompleted) {
